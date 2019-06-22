@@ -2,12 +2,17 @@ package pasantia.sbu.utn.sbu_app_test
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.webkit.WebChromeClient
 import android.webkit.WebViewClient
+import android.widget.Toast
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.activity_autogestion.*
 import kotlinx.android.synthetic.main.activity_item_bottom_sheet_menu.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.activity_main.view.webview
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +29,23 @@ class MainActivity : AppCompatActivity() {
         webview.loadUrl("https://m.facebook.com/SBUUTN")
         val settings = webview.settings
         settings.javaScriptEnabled = true
+    }
+    private fun getToken(){
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    var w: Int = Log.w(TAG, "getInstanceId failed", task.exception)
+                    return@OnCompleteListener
+                }
+
+                // Get new Instance ID token
+                val token = task.result?.token
+
+                // Log and toast
+                val msg = getString(R.string.msg_token_fmt, token)
+                Log.d(TAG, msg)
+                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+            })
     }
     private fun showBottomSheet() {
         val items = arrayListOf(

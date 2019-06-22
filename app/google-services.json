@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "872347151912",
+    "firebase_url": "https://sbu-proyecto.firebaseio.com",
+    "project_id": "sbu-proyecto",
+    "storage_bucket": "sbu-proyecto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872347151912:android:32dcc88cc1c2726b",
+        "android_client_info": {
+          "package_name": "pasantia.sbu.utn.sbu_app_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872347151912-1qqlks3cf65bg4o0bpsft5lnohfe3aka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKCL7T4otD7tDCmlnpH3hMNPLYuQtf_Uk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872347151912-1qqlks3cf65bg4o0bpsft5lnohfe3aka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
